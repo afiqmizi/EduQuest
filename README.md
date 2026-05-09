@@ -1,16 +1,10 @@
-# eduquest
+EduQuest — Flutter Interactive Educational Game
+A gamified learning app for primary school students covering Matematik, Bahasa Melayu, Sains, and Bahasa Inggeris.
 
-A new Flutter project.
+Overview
+EduQuest is a Flutter + Dart educational game with:
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+4 subjects, each with unlimited levels
+Level 1 = animated intro "lesson" (video-style animated sequence with narration cues)
+Level 2+ = interactive quiz games (MCQ, drag & drop, matching, picture quiz)
+Adaptive difficulty, lives, streaks, stars, badges, and score tracking
