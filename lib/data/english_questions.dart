@@ -1,0 +1,222 @@
+import '../models/question.dart';
+import '../models/subject.dart';
+
+class EnglishQuestions {
+  static List<Question> getQuestions(int difficulty) {
+    final all = _allQuestions
+        .where((q) => (q.difficulty - difficulty).abs() <= 2)
+        .toList()
+      ..shuffle();
+    return all.take(5).toList();
+  }
+
+  static final List<Question> _allQuestions = [
+    Question(
+      id: 'en1', subject: SubjectType.english, difficulty: 1,
+      type: QuestionType.pictureQuiz,
+      questionText: 'What is this?',
+      imageEmoji: '🐶',
+      options: ['Cat', 'Dog', 'Bird', 'Fish'],
+      correctAnswer: 'Dog',
+      explanation: 'This is a DOG! Dogs are friendly animals. 🐶',
+    ),
+    Question(
+      id: 'en2', subject: SubjectType.english, difficulty: 1,
+      type: QuestionType.pictureQuiz,
+      questionText: 'What color is this?',
+      imageEmoji: '🔴',
+      options: ['Blue', 'Green', 'Red', 'Yellow'],
+      correctAnswer: 'Red',
+      explanation: 'This is RED! Ini adalah warna merah. 🔴',
+    ),
+    Question(
+      id: 'en3', subject: SubjectType.english, difficulty: 1,
+      type: QuestionType.mcq,
+      questionText: 'How do you greet someone in the morning?',
+      options: ['Good night', 'Good morning', 'Good evening', 'Goodbye'],
+      correctAnswer: 'Good morning',
+      explanation: '"Good morning" is used to greet someone in the morning! ☀️',
+    ),
+    Question(
+      id: 'en4', subject: SubjectType.english, difficulty: 1,
+      type: QuestionType.mcq,
+      questionText: 'What number comes after 4?',
+      options: ['3', '4', '5', '6'],
+      correctAnswer: '5',
+      explanation: 'After 4 comes 5! One, two, three, four, FIVE! 🖐️',
+    ),
+    Question(
+      id: 'en5', subject: SubjectType.english, difficulty: 2,
+      type: QuestionType.dragDrop,
+      questionText: 'Complete the sentence!',
+      sentenceTemplate: 'I ___ to school every day.',
+      options: ['go', 'eat', 'sleep', 'play'],
+      correctAnswer: 'go',
+      explanation: '"I GO to school" - go is the verb here! 🏫',
+    ),
+    Question(
+      id: 'en6', subject: SubjectType.english, difficulty: 2,
+      type: QuestionType.matching,
+      questionText: 'Match the animal to its sound!',
+      options: ['Cat', 'Dog', 'Cow', 'Duck'],
+      correctAnswer: 'Cat',
+      explanation: 'Every animal makes a different sound!',
+      matchPairs: [
+        ['Cat', 'Meow 🐱'],
+        ['Dog', 'Woof 🐶'],
+        ['Cow', 'Moo 🐄'],
+        ['Duck', 'Quack 🦆'],
+      ],
+    ),
+    Question(
+      id: 'en7', subject: SubjectType.english, difficulty: 2,
+      type: QuestionType.mcq,
+      questionText: 'Which is a fruit?',
+      options: ['Carrot', 'Potato', 'Apple', 'Onion'],
+      correctAnswer: 'Apple',
+      explanation: 'An APPLE is a fruit! Carrots and potatoes are vegetables. 🍎',
+    ),
+    Question(
+      id: 'en8', subject: SubjectType.english, difficulty: 3,
+      type: QuestionType.mcq,
+      questionText: 'What is the plural of "child"?',
+      options: ['Childs', 'Childes', 'Children', 'Childrens'],
+      correctAnswer: 'Children',
+      explanation: 'The plural of CHILD is CHILDREN - an irregular plural! 👧👦',
+    ),
+    Question(
+      id: 'en9', subject: SubjectType.english, difficulty: 3,
+      type: QuestionType.dragDrop,
+      questionText: 'Complete the sentence!',
+      sentenceTemplate: 'She ___ a beautiful dress.',
+      options: ['wear', 'wears', 'wearing', 'wore'],
+      correctAnswer: 'wears',
+      explanation: '"She WEARS" - add "s" after verbs for he/she/it! 👗',
+    ),
+    Question(
+      id: 'en10', subject: SubjectType.english, difficulty: 3,
+      type: QuestionType.mcq,
+      questionText: 'Which sentence is correct?',
+      options: [
+        'He go to school.',
+        'He goes to school.',
+        'He going to school.',
+        'He gone to school.',
+      ],
+      correctAnswer: 'He goes to school.',
+      explanation: 'For "he/she/it" in present tense, add "-s" or "-es" to the verb!',
+    ),
+    Question(
+      id: 'en11', subject: SubjectType.english, difficulty: 4,
+      type: QuestionType.mcq,
+      questionText: 'What is the past tense of "run"?',
+      options: ['Runned', 'Runs', 'Ran', 'Running'],
+      correctAnswer: 'Ran',
+      explanation: 'RUN → RAN. This is an irregular past tense verb! 🏃',
+    ),
+    Question(
+      id: 'en12', subject: SubjectType.english, difficulty: 4,
+      type: QuestionType.matching,
+      questionText: 'Match the adjective to its opposite!',
+      options: ['Big', 'Hot', 'Happy', 'Fast'],
+      correctAnswer: 'Big',
+      explanation: 'Antonyms are words with opposite meanings!',
+      matchPairs: [
+        ['Big', 'Small'],
+        ['Hot', 'Cold'],
+        ['Happy', 'Sad'],
+        ['Fast', 'Slow'],
+      ],
+    ),
+    Question(
+      id: 'en13', subject: SubjectType.english, difficulty: 5,
+      type: QuestionType.mcq,
+      questionText: 'Which word is a VERB?',
+      options: ['Beautiful', 'Quickly', 'Running', 'Table'],
+      correctAnswer: 'Running',
+      explanation: '"Running" is a verb (action word)! Verbs describe actions. 🏃',
+    ),
+    Question(
+      id: 'en14', subject: SubjectType.english, difficulty: 5,
+      type: QuestionType.dragDrop,
+      questionText: 'Complete the sentence!',
+      sentenceTemplate: 'The cat ___ on the mat.',
+      options: ['sat', 'sit', 'sitting', 'sits'],
+      correctAnswer: 'sat',
+      explanation: '"The cat SAT on the mat" - past tense of sit! 🐱',
+    ),
+    Question(
+      id: 'en15', subject: SubjectType.english, difficulty: 5,
+      type: QuestionType.mcq,
+      questionText: 'What type of word is "quickly"?',
+      options: ['Noun', 'Verb', 'Adjective', 'Adverb'],
+      correctAnswer: 'Adverb',
+      explanation: '"Quickly" is an ADVERB - it describes HOW something is done! ⚡',
+    ),
+    Question(
+      id: 'en16', subject: SubjectType.english, difficulty: 6,
+      type: QuestionType.mcq,
+      questionText: 'Which sentence uses "there" correctly?',
+      options: [
+        'There going to the park.',
+        'Put the book over there.',
+        'There book is on the table.',
+        'I like there house.',
+      ],
+      correctAnswer: 'Put the book over there.',
+      explanation: '"There" refers to a place. "Their" = belonging to them. "They\'re" = they are!',
+    ),
+    Question(
+      id: 'en17', subject: SubjectType.english, difficulty: 7,
+      type: QuestionType.mcq,
+      questionText: 'What is a simile?',
+      options: [
+        'A word that sounds the same',
+        'Comparing using "like" or "as"',
+        'A word with same meaning',
+        'A repeated letter sound',
+      ],
+      correctAnswer: 'Comparing using "like" or "as"',
+      explanation: 'Simile uses "like" or "as". Example: "She runs like the wind!" 🌬️',
+    ),
+    Question(
+      id: 'en18', subject: SubjectType.english, difficulty: 8,
+      type: QuestionType.mcq,
+      questionText: 'Which is in the passive voice?',
+      options: [
+        'John ate the cake.',
+        'The cake was eaten by John.',
+        'John is eating the cake.',
+        'John will eat the cake.',
+      ],
+      correctAnswer: 'The cake was eaten by John.',
+      explanation: 'Passive voice: object + was/were + past participle + by + subject!',
+    ),
+    Question(
+      id: 'en19', subject: SubjectType.english, difficulty: 9,
+      type: QuestionType.mcq,
+      questionText: 'What does "ambiguous" mean?',
+      options: [
+        'Very clear and obvious',
+        'Open to more than one interpretation',
+        'Extremely difficult',
+        'Very beautiful',
+      ],
+      correctAnswer: 'Open to more than one interpretation',
+      explanation: '"Ambiguous" means something can be understood in more than one way!',
+    ),
+    Question(
+      id: 'en20', subject: SubjectType.english, difficulty: 10,
+      type: QuestionType.mcq,
+      questionText: 'Which sentence uses the subjunctive mood correctly?',
+      options: [
+        'I wish I was taller.',
+        'I wish I were taller.',
+        'I wish I am taller.',
+        'I wish I be taller.',
+      ],
+      correctAnswer: 'I wish I were taller.',
+      explanation: '"I wish I WERE" - subjunctive mood uses "were" for all persons when expressing a wish!',
+    ),
+  ];
+}
